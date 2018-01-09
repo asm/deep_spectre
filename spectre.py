@@ -26,7 +26,7 @@ data_y = np.zeros([n_samples, len(unique_chars)])
 print("Collecting training data...")
 for i in range(n_iterations):
     for j, val in enumerate(secret_chars):
-        data_x[i * n_chars + j, :] = deep_spectre.train(j);
+        data_x[i * n_chars + j, :] = deep_spectre.train(j)
         data_y[i * n_chars + j, char_to_idx_map[val]] = 1
 
 print("Scaling data between 0-1...")
