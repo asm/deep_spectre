@@ -1,9 +1,9 @@
 from distutils.core import setup, Extension
 
-module1 = Extension('spectre_tf',
-                    sources = ['spectre_tf.c'])
+module1 = Extension('deep_spectre',
+                    sources = ['deep_spectre.c'])
 
-setup (name = 'Spectre Tensorflow',
+setup (name = 'Deep Spectre',
        version = '1.0',
-       description = '',
+       description = 'Deep learning side channel privileged memory reader',
        ext_modules = [module1])
