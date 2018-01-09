@@ -1,6 +1,6 @@
 # Deep Spectre
 
-Deep Spectre is a deep learning side channel privileged memory reader heavily based on the PoC found [here](https://gist.github.com/ErikAugust/724d4a969fb2c6ae1bbd7b2a9e3d4bb6).  You can read more about Spectre in 
+Deep Spectre is a deep learning side channel privileged memory reader heavily based on the PoC found [here](https://gist.github.com/ErikAugust/724d4a969fb2c6ae1bbd7b2a9e3d4bb6).  I've written a [Medium post](https://medium.com/@syne/exploiting-spectre-with-deep-learning-d8ec2ba4c8ca) explaining the deep learning code and you can read more about Spectre in 
 [CVE-2017-5753](https://nvd.nist.gov/vuln/detail/CVE-2017-5753) and [CVE-2017-5715](https://nvd.nist.gov/vuln/detail/CVE-2017-5715) or check out the [whitepaper](https://spectreattack.com/spectre.pdf) and [Google Project Zero post](https://googleprojectzero.blogspot.com/2018/01/reading-privileged-memory-with-side.html).
 
 ### Installing
