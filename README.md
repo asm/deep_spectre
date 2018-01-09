@@ -13,7 +13,7 @@ python setup.py install
 After installing the packages listed in ```requirements.txt```, start the program and you should see the results below
 
 ```sh
-./deep_spectre.py
+./spectre.py
 Using TensorFlow backend.
 Collecting training data...
 Scaling data between 0-1...

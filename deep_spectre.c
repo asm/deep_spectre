@@ -111,7 +111,7 @@ static PyObject * py_read(size_t malicious_x, uint8_t pos) {
   return l;
 }
 
-static PyObject * spectre_tf_train(PyObject *self, PyObject *args) {
+static PyObject * deep_spectre_train(PyObject *self, PyObject *args) {
   uint8_t pos = 0;
 
   PyArg_ParseTuple(args, "b", &pos);
@@ -121,7 +121,7 @@ static PyObject * spectre_tf_train(PyObject *self, PyObject *args) {
   return py_read(malicious_x, pos);
 }
 
-static PyObject * spectre_tf_secret(PyObject *self, PyObject *args) {
+static PyObject * deep_spectre_secret(PyObject *self, PyObject *args) {
   uint8_t pos = 0;
 
   PyArg_ParseTuple(args, "b", &pos);
@@ -131,27 +131,27 @@ static PyObject * spectre_tf_secret(PyObject *self, PyObject *args) {
   return py_read(malicious_x, pos);
 }
 
-static PyObject * spectre_tf_train_str(PyObject *self, PyObject *args) {
+static PyObject * deep_spectre_train_str(PyObject *self, PyObject *args) {
   return Py_BuildValue("s", train_str);
 }
 
-static PyMethodDef SpectreTFMethods[] = {
-    {"train",      spectre_tf_train,     METH_VARARGS, "Surreptitiously read a training byte from memory"},
-    {"read",       spectre_tf_secret,    METH_VARARGS, "Surreptitiously read a secret byte from memory"},
-    {"train_str",  spectre_tf_train_str, METH_VARARGS, "Return the training string"},
+static PyMethodDef DeepSpectreMethods[] = {
+    {"train",      deep_spectre_train,     METH_VARARGS, "Surreptitiously read a training byte from memory"},
+    {"read",       deep_spectre_secret,    METH_VARARGS, "Surreptitiously read a secret byte from memory"},
+    {"train_str",  deep_spectre_train_str, METH_VARARGS, "Return the training string"},
     {NULL, NULL, 0, NULL}        /* Sentinel */
 };
 
-static struct PyModuleDef spectre_tf_module = {
+static struct PyModuleDef deep_spectre_module = {
     PyModuleDef_HEAD_INIT,
-    "spectre_tf",   /* name of module */
-    NULL,           /* module documentation, may be NULL */
-    -1,             /* size of per-interpreter state of the module,
+    "deep_spectre",   /* name of module */
+    NULL,             /* module documentation, may be NULL */
+    -1,               /* size of per-interpreter state of the module,
                        or -1 if the module keeps state in global variables. */
-    SpectreTFMethods
+    DeepSpectreMethods
 };
 
 PyMODINIT_FUNC
-PyInit_spectre_tf(void) {
-    return PyModule_Create(&spectre_tf_module);
+PyInit_deep_spectre(void) {
+    return PyModule_Create(&deep_spectre_module);
 }
