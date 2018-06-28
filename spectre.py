@@ -29,7 +29,7 @@ for i in range(n_iterations):
         data_x[i * n_chars + j, :] = deep_spectre.train(j)
         data_y[i * n_chars + j, char_to_idx_map[val]] = 1
 
-print("Scaling data between 0-1...")
+print("Scaling data...")
 scaler = StandardScaler()
 data_x = scaler.fit_transform(data_x)
 
